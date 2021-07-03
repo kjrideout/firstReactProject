@@ -75,7 +75,7 @@ class CommentForm extends Component {
                 />
               </div>
               <div className="form-group">
-                <Label>Rating</Label>
+                <Label>Comment</Label>
                 <Control.textarea model=".comment" id="comment" 
                   name="comment" rows="6" className="form-control"
                 />
