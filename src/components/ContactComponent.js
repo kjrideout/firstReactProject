@@ -16,19 +16,21 @@ class Contact extends Component {
     super(props);
     
     this.state = {
+      /*
       firstName: '',
       lastName: '',
       phoneNum: '',
       email: '',
       agree: false,
       contactType: 'By Phone',
-      feedback: '',
+      feedback: ''
       touched: {
         firstName: false,
         lastName: false,
         phoneNum: false,
         email: false
       }
+      */
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +42,6 @@ class Contact extends Component {
   }
 
   render() {
-
     return (
       <div className="container">
         <div className="row">
@@ -191,7 +192,7 @@ class Contact extends Component {
                 </Col>
                 <Col md={4}>
                   <Control.select model=".contactType" name="contactType"
-                    className="form-control">
+                      className="form-control">
                     <option>By Phone</option>
                     <option>By Email</option>
                   </Control.select>

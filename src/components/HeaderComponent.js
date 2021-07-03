@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
   Button, Modal, ModalHeader, ModalBody,
   Form, FormGroup, Input, Label } from 'reactstrap';
@@ -108,7 +108,7 @@ class Header extends Component {
                     Remember me
                 </Label>
               </FormGroup>
-              <Button type="submit" value="submit" color="primary">Login</Button>
+              <Button className="mt-2" type="submit" value="submit" color="primary">Login</Button>
             </Form>
           </ModalBody>
         </Modal>
