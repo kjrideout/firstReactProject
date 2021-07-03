@@ -16,21 +16,19 @@ class Contact extends Component {
     super(props);
     
     this.state = {
-      /*
       firstName: '',
       lastName: '',
       phoneNum: '',
       email: '',
       agree: false,
       contactType: 'By Phone',
-      feedback: ''
+      feedback: '',
       touched: {
         firstName: false,
         lastName: false,
         phoneNum: false,
         email: false
       }
-      */
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -13,7 +13,12 @@ class CommentForm extends Component {
     super(props);
 
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      touched: {
+        rating: false,
+        author: false,
+        comment: false,
+      }
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -29,6 +34,7 @@ class CommentForm extends Component {
   handleSubmit(values) {
     console.log('Current state is: ' + JSON.stringify(values));
     alert('Current state is: ' + JSON.stringify(values));
+    this.toggleModal();
   }
 
   render() {
@@ -37,7 +43,7 @@ class CommentForm extends Component {
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
           <ModalBody>
-            <LocalForm onSubmit={this.handleSubmit}>
+          <LocalForm onSubmit={values => this.handleSubmit(values)}>
               <div className="form-group">
                 <Label htmlFor="rating">Rating</Label>
                   <Control.select model=".rating" name="rating"

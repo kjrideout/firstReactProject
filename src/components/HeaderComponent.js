@@ -102,13 +102,13 @@ class Header extends Component {
                     innerRef={input => this.password = input} />
               </FormGroup>
               <FormGroup check>
-                <Label check>
+                <Label check className="mb-2 ml-1 mt-1">
                   <Input type="checkbox" name="remember"
                       innerRef={input => this.remember = input} />
                     Remember me
                 </Label>
               </FormGroup>
-              <Button className="mt-2" type="submit" value="submit" color="primary">Login</Button>
+              <Button type="submit" value="submit" color="primary">Login</Button>
             </Form>
           </ModalBody>
         </Modal>
