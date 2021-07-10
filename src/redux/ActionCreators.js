@@ -1,7 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
-
 export const fetchCampsites = () => dispatch => {
 	dispatch(campsitesLoading());
 
@@ -110,6 +109,43 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
 				alert('Your comment could not be posted\nError: ' + error.message);
 		});
 };
+
+export const fetchPartners = () => dispatch => {
+	dispatch(partnersLoading());
+
+	return fetch(baseUrl + 'partners')
+		.then(response => {
+				if (response.ok) {
+					return response;
+				} else {
+					const error = new Error(`Error ${response.status}: ${response.statusText}`);
+					error.response = response;
+					throw error;
+				}
+			},
+			error => {
+				const errMess = new Error(error.message);
+				throw errMess;
+			}
+		)
+		.then(response => response.json())
+		.then(partners => dispatch(addPartners(partners)))
+		.catch(error => dispatch(partnersFailed(error.message)));
+};
+
+export const partnersLoading = () => ({
+	type: ActionTypes.PARTNERS_LOADING
+});
+
+export const partnersFailed = errMess => ({
+	type: ActionTypes.PARTNERS_FAILED,
+	payload: errMess
+});
+
+export const addPartners = partners => ({
+	type: ActionTypes.ADD_PARTNERS,
+	payload: partners
+});
 
 export const fetchPromotions = () => dispatch => {
 	dispatch(promotionsLoading());
