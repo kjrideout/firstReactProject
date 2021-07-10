@@ -5,7 +5,6 @@ import { baseUrl} from '../shared/baseUrl';
 import { Loading } from './LoadingComponent';
 import { Fade, Stagger } from 'react-animation-components';
 
-
 function RenderPartner({partner}) {
   if (partner) {
     return (
@@ -46,34 +45,8 @@ function PartnerList(props) {
     </div>
   )
 }
-  /*
-  if (partner) {
-    return (
-      <React.Fragment>
-        <Media object src={baseUrl + partner.image} alt={partner.name} width="150" />
-          <Media body className="ml-5 mb-4">
-            <Media heading>{partner.name}</Media>
-            {partner.description}
-          </Media>
-      </React.Fragment>
-    );
-  }
-  return <div />;
-  */
-
 
 function About(props) {
-
-  /*
-  const partners = props.partners.map(partner => {
-    return (
-      <Media tag="li" key={partner.id}>
-        <RenderPartner partner={partner} />
-      </Media>
-    );
-  });
-  */
-
   return (
     <div className="container">
       <div className="row">

@@ -93,21 +93,21 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
 		})
 		.then(response => {
 				if (response.ok) {
-						return response;
+					return response;
 				} else {
-						const error = new Error(`Error ${response.status}: ${response.statusText}`);
-						error.response = response;
-						throw error;
+					const error = new Error(`Error ${response.status}: ${response.statusText}`);
+					error.response = response;
+					throw error;
 				}
 			},
 			error => { throw error; }
-		)
-		.then(response => response.json())
-		.then(response => dispatch(addComment(response)))
-		.catch(error => {
+			)
+			.then(response => response.json())
+			.then(response => dispatch(addComment(response)))
+			.catch(error => {
 				console.log('post comment', error.message);
 				alert('Your comment could not be posted\nError: ' + error.message);
-		});
+			});
 };
 
 export const fetchPartners = () => dispatch => {
@@ -183,3 +183,31 @@ export const addPromotions = promotions => ({
 	type: ActionTypes.ADD_PROMOTIONS,
 	payload: promotions
 });
+
+export const postFeedback = (feedback) => () => {
+     
+	return fetch(baseUrl + 'feedback', {
+			method: "POST",
+			body: JSON.stringify(feedback),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+		.then(response => {
+				if (response.ok) {
+					return response;
+				} else {
+					const error = new Error(`Error ${response.status}: ${response.statusText}`);
+					error.response = response;
+					throw error;
+				}
+			},
+			error => { throw error; }
+			)
+			.then(response => response.json())
+			.then(response => {alert('Thank you for your feedback!\n' + JSON.stringify(response))})
+			.catch(error => {
+				console.log('feedback', error.message);
+				alert('Your feedback could not be posted\nError: ' + error.message);
+			});
+};
