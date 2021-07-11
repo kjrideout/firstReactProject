@@ -13,7 +13,6 @@ import { postComment, fetchCampsites, fetchComments, fetchPromotions,
   fetchPartners, postFeedback } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-
 const mapStateToProps = state => {
   return {
     campsites: state.campsites,
@@ -87,7 +86,6 @@ class Main extends Component {
               <Redirect to='/home' />
             </Switch>
           </CSSTransition>
-          6
         </TransitionGroup>
         <Footer />
       </div>

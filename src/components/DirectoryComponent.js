@@ -5,7 +5,6 @@ import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { AnimationWrapper } from 'react-hover-animation'
 
-
 function RenderDirectoryItem({campsite}) {
   return (
     <AnimationWrapper>
